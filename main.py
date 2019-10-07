@@ -32,7 +32,7 @@ def write_csv(data):
 def get_html(url):
     proxies = open('proxies.txt').read().split('\n')
     useragents = open('useragents.txt').read().split('\n')
-    for i in range(10):
+    for i in range(20):
         proxy = {'https': 'https://' + choice(proxies)}
         useragent = {'User-Agent': choice(useragents)}
         print(proxy, useragent)
@@ -65,9 +65,50 @@ def get_data(html):
 
 def main():
     get_column_name()
-    pattern = 'https://domclick.ru/search?address=f2b23f98-35d8-4d18-a433-7a01e7820cf5&offset={}&limit=30&category=living&deal_type=sale&has_photo=1&offer_type=flat&rooms=1&sort_dir=desc'
+    # для 1 комн.
+    # pattern = 'https://domclick.ru/search?address=f2b23f98-35d8-4d18-a433-7a01e7820cf5&offset={}&limit=30&category=living&deal_type=sale&has_photo=1&offer_type=flat&rooms=1&sort_dir=desc'
+    # i = 0
+    # while i <= 1950:
+    #     url = pattern.format(str(i))
+    #     i = i + 30
+    #     get_data(get_html(url))
+
+    # для 2 комн
+    # pattern = 'https://domclick.ru/search?address=f2b23f98-35d8-4d18-a433-7a01e7820cf5&offset={}&limit=30&category=living&deal_type=sale&has_photo=1&offer_type=flat&rooms=2&sort_dir=desc'
+    # i = 0
+    # while i <= 1950:
+    #     url = pattern.format(str(i))
+    #     i = i + 30
+    #     get_data(get_html(url))
+
+    # для 3 комн
+    # pattern = 'https://domclick.ru/search?address=f2b23f98-35d8-4d18-a433-7a01e7820cf5&offset={}&limit=30&category=living&deal_type=sale&has_photo=1&offer_type=flat&rooms=3&sort_dir=desc'
+    # i = 0
+    # while i <= 1950:
+    #     url = pattern.format(str(i))
+    #     i = i + 30
+    #     get_data(get_html(url))
+
+    # для 4 комн
+    # pattern = 'https://domclick.ru/search?address=f2b23f98-35d8-4d18-a433-7a01e7820cf5&offset={}&limit=30&category=living&deal_type=sale&has_photo=1&offer_type=flat&rooms=4&sort_dir=desc'
+    # i = 0
+    # while i <= 690:
+    #     url = pattern.format(str(i))
+    #     i = i + 30
+    #     get_data(get_html(url))
+    
+    # для 5+ комн
+    # pattern = 'https://domclick.ru/search?address=f2b23f98-35d8-4d18-a433-7a01e7820cf5&offset={}&limit=30&category=living&deal_type=sale&has_photo=1&offer_type=flat&rooms=5%2B&sort_dir=desc'
+    # i = 0
+    # while i <= 60:
+    #     url = pattern.format(str(i))
+    #     i = i + 30
+    #     get_data(get_html(url))
+
+    # для студий
+    pattern = 'https://domclick.ru/search?address=f2b23f98-35d8-4d18-a433-7a01e7820cf5&offset={}&limit=30&category=living&deal_type=sale&has_photo=1&offer_type=flat&rooms=st&sort_dir=desc'
     i = 0
-    while i <= 30:
+    while i <= 780:
         url = pattern.format(str(i))
         i = i + 30
         get_data(get_html(url))
